@@ -1,0 +1,15 @@
+local supportedGames = {
+    [3623096087] = true, -- Muscle Legends
+}
+
+local function isGameSupported(placeId)
+    return supportedGames[placeId] or false
+end
+
+local currentGameId = game.PlaceId
+
+if isGameSupported(currentGameId) then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/alternativeforscripts773/Project-Downfall/refs/heads/main/mainscript"))()
+else
+    game.Players.LocalPlayer:Kick("This game is not supported!")
+end
